@@ -1,0 +1,3 @@
+<app-contact-form (onAdd)="createNewContact($event)" [contacts]="contacts" [name]="name" [phone]="phone" [editMode]="editMode" (onCancel)="cancelEdit()" (onUpdate)="confirmEdit($event)"></app-contact-form> 
+<br>
+<app-contacts-list [contacts]="contacts" (onDelete)="deleteContact($event)" (onEdit)="startEdit($event)"></app-contacts-list>

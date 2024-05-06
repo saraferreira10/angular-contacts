@@ -3,8 +3,8 @@ export class Contact {
   name: string;
   phone: string;
 
-  constructor(name: string, phone: string) {
-    this.id = Math.round(Math.random() * (100 - 1) + 1);
+  constructor(id: number, name: string, phone: string) {
+    this.id = id;
     this.name = name;
     this.phone = phone;
   }

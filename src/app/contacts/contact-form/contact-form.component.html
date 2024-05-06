@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="form-group col-sm">
+    <label for="name">Name</label>
+    <input
+      [(ngModel)]="name"
+      name="name"
+      type="text"
+      class="form-control"
+      placeholder="Name..."
+    />
+  </div>
+  <div class="form-group col-sm">
+    <label for="phone_number">Phone Number</label>
+    <input
+      [(ngModel)]="phone"
+      name="phone_number"
+      type="text"
+      class="form-control"
+      placeholder="Phone number..."
+    />
+  </div>
+</div>
+
+<div>
+  <div class="btn_div">
+    <button
+      class="btn btn-primary"
+      (click)="createNewContact()"
+      *ngIf="!editMode"
+      [disabled]="name == '' || phone == ''"
+    >
+      ADD NEW CONTACT
+    </button>
+
+    <button
+      class="btn btn-danger"
+      [disabled]="name == '' && phone == ''"
+      *ngIf="!editMode"
+      (click)="resetContact()"
+    >
+      RESET
+    </button>
+  </div>
+
+  <div class="btn_div">
+    <button
+      class="btn btn-primary"
+      [disabled]="name == '' && phone == ''"
+      *ngIf="editMode"
+      (click)="updateContact()"
+    >
+      UPDATE CONTACT
+    </button>
+
+    <button
+      class="btn btn-danger"
+      [disabled]="name == '' && phone == ''"
+      *ngIf="editMode"
+      (click)="cancelEdit()"
+    >
+      CANCEL
+    </button>
+  </div>
+</div>

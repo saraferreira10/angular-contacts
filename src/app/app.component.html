@@ -1,62 +1,6 @@
 <div class="container main">
   <h1 class="">CONTACTS LIST</h1>
   <div class="row">
-    <div class="form-group col-sm">
-      <label for="name">Name</label>
-      <input
-        [(ngModel)]="name"
-        name="name"
-        type="text"
-        class="form-control"
-        placeholder="Name..."
-      />
-    </div>
-    <div class="form-group col-sm">
-      <label for="phone_number">Phone Number</label>
-      <input
-        [(ngModel)]="phone"
-        name="phone_number"
-        type="text"
-        class="form-control"
-        placeholder="Phone number..."
-      />
-    </div>
+    <app-contacts></app-contacts>
   </div>
-
-  <div>
-    <button
-      class="btn btn-primary"
-      (click)="createNewContact(name, phone)"
-      [disabled]="name == '' || phone == ''"
-    >
-      ADD NEW CONTACT
-    </button>
-    &nbsp;
-    <button
-      class="btn btn-danger"
-      [disabled]="name == '' && phone == ''"
-      (click)="resetContact()"
-    >
-      RESET
-    </button>
-  </div>
-
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Phone Number</th>
-        <th scope="col">#</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let contact of contacts">
-        <th scope="row">{{ contact.id }}</th>
-        <td>{{ contact.name }}</td>
-        <td>{{ contact.phone }}</td>
-        <td><button class="btn btn-danger" (click)="deleteContact(contact.id)">DELETE</button></td>
-      </tr>
-    </tbody>
-  </table>
 </div>
